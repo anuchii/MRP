@@ -32,5 +32,5 @@ public abstract class MediaEntry {
 
 
     public abstract boolean isValidAgeRestriction(int age);
-
+    public abstract MediaType getMediaType();
 }
