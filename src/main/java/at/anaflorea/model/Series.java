@@ -8,7 +8,7 @@ public class Series extends MediaEntry {
 
     @Override
     public boolean isValidAgeRestriction(int age) {
-        return false;
+        return AgeRatingSystem.FSK.isValid(age);
     }
 
     @Override
