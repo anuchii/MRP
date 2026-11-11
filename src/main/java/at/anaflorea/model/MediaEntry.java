@@ -1,16 +1,19 @@
 package at.anaflorea.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
 @Getter
 @SuperBuilder
 public abstract class MediaEntry {
-    private UUID id;
+    @Builder.Default
+    private UUID id = UUID.randomUUID();
     @Setter
     private String title;
     @Setter
@@ -18,7 +21,8 @@ public abstract class MediaEntry {
     @Setter
     private int releaseYear;
     @Setter
-    private Set<Genre> genres;
+    @Builder.Default
+    private Set<Genre> genres = new HashSet<>();
     @Setter
     private int ageRestriction;
     private User creator;
