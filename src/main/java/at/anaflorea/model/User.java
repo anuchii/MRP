@@ -13,8 +13,6 @@ import java.util.UUID;
 
 @Builder
 @Getter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-
 public class User {
     @Builder.Default
     private UUID id = UUID.randomUUID();
