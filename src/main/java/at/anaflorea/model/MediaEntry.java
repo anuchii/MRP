@@ -25,12 +25,19 @@ public abstract class MediaEntry {
     private Set<Genre> genres = new HashSet<>();
     @Setter
     private int ageRestriction;
-    private User creator;
-    private double averageScore;
+
+
+    private UUID creatorId;
+
+    private Double averageScore;
     private int favoriteCount;
 
 
+    protected abstract AgeRatingSystem getAgeRatingSystem();
 
-    public abstract boolean isValidAgeRestriction(int age);
     public abstract MediaType getMediaType();
+
+    public boolean hasValidAgeRestriction() {
+        return getAgeRatingSystem().isValid(ageRestriction);
+    }
 }
