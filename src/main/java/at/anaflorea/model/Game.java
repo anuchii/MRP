@@ -7,8 +7,8 @@ public class Game extends MediaEntry {
 
 
     @Override
-    public boolean isValidAgeRestriction(int age) {
-        return AgeRatingSystem.PEGI.isValid(age);
+    protected AgeRatingSystem getAgeRatingSystem() {
+        return AgeRatingSystem.PEGI;
     }
 
     @Override
