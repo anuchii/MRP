@@ -13,7 +13,7 @@ public class Rating {
     @Builder.Default
     private UUID id = UUID.randomUUID();
 
-    private UUID userid;
+    private UUID userId;
     private UUID mediaId;
 
     @Setter
